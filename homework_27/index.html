@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+</head>
+<body data-bs-theme="dark">
+<h1>ДЗ 27 <span class="badge text-bg-secondary">New</span></h1>
+<button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExampleOne">
+    Подсказка №1
+</button>
+<div class="collapse mt-2" id="collapseExampleOne">
+    <div class="card card-body">
+        Этот супергерой умеет лазать по стенам
+    </div>
+    <img src="https://cdn.kanobu.ru/articles/pics/2f29d887-5a3f-41a9-b574-3fada5726bf8.jpeg" class="img-thumbnail"
+         alt="wall">
+</div>
+<button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExampleTwo">
+    Подсказка №2
+</button>
+<div class="collapse mt-2" id="collapseExampleTwo">
+    <div class="card card-body">
+        У него есть паутина
+    </div>
+    <img src="https://cdn-icons-png.flaticon.com/512/96/96343.png" class="img-thumbnail" alt="web">
+</div>
+<button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExampleThree">
+    Подсказка №3
+</button>
+<div class="collapse mt-2" id="collapseExampleThree">
+    <div class="card card-body">
+        У него есть паучье чутье
+    </div>
+    <img src="https://cs.pikabu.ru/img_n/2012-07_2/1b3.jpg" class="img-thumbnail" alt="web">
+</div>
+<div class="container mt-5">
+    <input type="text" id="myInput" class="form-control mb-2" placeholder="Твой ответ">
+    <button class="btn btn-primary w-100" onclick="check()">Проверить</button>
+    <p id="result" class="mt-3"></p>
+    <img id="myImage" src="https://images.meme-arsenal.com/31e1f49f75bc43a78ab3dc5f855c6189.jpg"
+         class="img-fluid d-none mt-2" style="max-width: 250px;">
+</div>
+<script>
+    function check() {
+        let val = document.getElementById('myInput').value.toLowerCase();
+        let res = document.getElementById('result');
+        let img = document.getElementById('myImage');
+        img.classList.remove('d-none');
+        if (val === "человек-паук" || val === "человек паук" || val === "spider man") {
+            res.innerText = 'Правильно! ✅';
+        } else {
+            res.innerText = 'Неверно... ❌';
+        }
+    }
+</script>
+</body>
+</html>
